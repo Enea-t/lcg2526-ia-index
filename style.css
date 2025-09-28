@@ -1,0 +1,123 @@
+body {
+    background-color: rgb(24, 24, 24);
+    color: rgb(119, 119, 119);
+    font-size: 20px;
+}
+
+@font-face {
+    font-family: "Geist";
+    src: url(font/Geist[wght].ttf);
+}
+
+#titolo {
+    width: 100%;
+    overflow: visible;
+    position: relative;
+}
+
+h1 {
+    color: darkcyan;
+    font-family: "Geist", sans-serif;
+    font-size: 11vw;
+    line-height: 10vw;
+    font-weight: 900;
+    width: 90%;
+    text-align: right;
+    margin: 0;
+}
+
+h2 {
+    color: rgb(62, 62, 62);
+    font-family: "Geist", sans-serif;
+    font-size: 5vw;
+    font-weight: 900;
+    margin: 0;
+}
+
+p {
+    font-family: "Geist", sans-serif;
+    font-size: 20px;
+    font-weight: normal;
+}
+
+#anno {
+    height: 30vw;
+    rotate: 90deg;
+    text-align: center;
+    position: absolute;
+    right: 0.5vw;
+    top: 0;
+}
+
+.lezioni {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    border-top: 1px solid white;
+    margin: 0;
+    background-color: black;
+    padding-left: 80px;
+    padding-right: 80px;
+}
+
+.lezioni li {
+    list-style: none;
+    width: 20%;
+    min-width: 200px;
+    background-color: rgb(24, 24, 24);
+    border-radius: 20px;
+    margin: 20px;
+    font-family: "Geist", sans-serif;
+    padding: 40px;
+    text-align: center;
+}
+
+.lezioni li a {
+    color: rgb(119, 119, 119);
+    text-decoration: none;
+}
+
+.lezioni li a span{
+    font-size: 100px;
+    line-height: 80px;
+    right: 20px;
+    top: 0;
+    color: darkcyan;
+    text-decoration: none;
+}
+
+.filetto_verticale {
+    background-color: white;
+    width: 1px;
+    height: 39vw;
+    position: absolute;
+    top: 0;
+    left: 92%;
+}
+
+#linea_orizz {
+    margin-left: 50%;
+    margin-right: 8%;
+    margin-top: 9vw;
+    height: 1px;
+    background-color: white;
+}
+
+.linea_vert {
+    width: 1px;
+    height: 9vw;
+    margin-left: 50%;
+    background-color: white;
+}
+
+#sottotitolo {
+    text-align: center;
+    width: 40%;
+    margin-left: 30%;
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
