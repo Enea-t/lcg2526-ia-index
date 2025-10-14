@@ -6,6 +6,8 @@ let yRocket = yMax*0.6;
 
 let table;
 let star_img;
+let stars_valid = []
+
 let tempo = 0;
 let scalaDiBase = 1;
 let ruotaGlobale = 1
@@ -15,10 +17,25 @@ function preload() {
   star_img = loadImage("../Stelle/star.png");
 }
 
+function isStarSizeValid(value){
+  //se il dato in ingresso è corretto o meno
+  //restituire un booleano
+  return value > 0;
+}
 
 function setup() {
   createCanvas(xMax, yMax);
-  frameRate(1);
+  frameRate(30);
+  //fultrare i dati
+  //tramite isStarSizeValid
+  //applichiamo la funzione di filtro
+
+  for (let i=0; i < table.getRowCount(); i++) {
+    let star_value = table.getNum(i, "starSize");
+    if(isStarSizeValid(star_value)){
+      stars_valid.push(star_value)
+    }
+  }
 }
 
 function drawStarsFromFile() {
@@ -87,12 +104,25 @@ function draw() {
 
   let variazionescala = scalaDiBase * Math.abs(sin(tempo))
 
-  drawStarsFromFile();
-  drawRocket(xRocket, yRocket); 
+  //drawStarsFromFile();
+  //drawRocket(xRocket, yRocket); 
   ruotaGlobale += 1
 
   xRocket = (xRocket +1) % xMax;
   yRocket = moveRocket(yRocket); 
   tempo += 1;
 
+  image(star_img, 50, 50, min(stars_valid), starSize)
+
+}
+
+function mousePressed(){
+  //fermiamo l'animazione o la rifacciamo partire
+  //se clicchiamo il mouse
+
+  if(isLooping()){
+    noLoop();
+  }else{
+    loop();
+  }
 }
